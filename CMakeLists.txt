@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.0.2)
 
 project(ball)
 
+# Uncomment for OpenGL:
+# add_compile_definitions(SMALL3D_OPENGL)
+
 file(COPY "resources" DESTINATION "${PROJECT_BINARY_DIR}/bin")
 file(COPY "deps/shaders" DESTINATION "${PROJECT_BINARY_DIR}/bin/resources")
 
