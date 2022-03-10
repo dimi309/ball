@@ -34,7 +34,6 @@ endif()
 
 # Delete for OpenGL:
 find_package(Vulkan REQUIRED) 
-find_package(VKZOS REQUIRED)
 
 # Uncomment for OpenGL:
 # find_package(OpenGL REQUIRED)

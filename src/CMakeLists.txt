@@ -6,7 +6,6 @@ target_include_directories(ball PUBLIC
   ${SMALL3D_INCLUDE_DIR}
   ${GLFW_INCLUDE_DIRS}
   ${Vulkan_INCLUDE_DIR} # Replace with ${OPENGL_INCLUDE_DIR} for OpenGL
-  ${VKZOS_INCLUDE_DIRS} # Remove for OpenGL
   ${PNG_INCLUDE_DIRS}
   ${GLM_INCLUDE_DIRS}
   ${OGG_INCLUDE_DIRS}
@@ -22,7 +21,6 @@ target_link_libraries(ball PUBLIC
   # ${OPENGL_LIBRARIES}
   ${GLFW_LIBRARIES}
   ${Vulkan_LIBRARIES} # Remove for OpenGL
-  ${VKZOS_LIBRARIES} # Remove for OpenGL
   ${PNG_LIBRARIES}
   ${VORBIS_LIBRARIES}
   ${OGG_LIBRARIES}
