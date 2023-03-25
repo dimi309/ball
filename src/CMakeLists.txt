@@ -20,7 +20,7 @@ target_link_libraries(ball PUBLIC
   # ${GLEW_LIBRARIES}
   # ${OPENGL_LIBRARIES}
   ${GLFW_LIBRARIES}
-  ${Vulkan_LIBRARIES} # Remove for OpenGL
+  ${VULKAN_HELPER_LIBRARY} ${Vulkan_LIBRARIES} # Remove for OpenGL
   ${PNG_LIBRARIES}
   ${VORBIS_LIBRARIES}
   ${OGG_LIBRARIES}
