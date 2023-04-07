@@ -5,7 +5,7 @@ target_include_directories(ball PUBLIC "${CMAKE_SOURCE_DIR}/include")
 target_include_directories(ball PUBLIC
   ${SMALL3D_INCLUDE_DIR}
   ${GLFW_INCLUDE_DIRS}
-  ${Vulkan_INCLUDE_DIR} # Replace with ${OPENGL_INCLUDE_DIR} for OpenGL
+  ${OPENGL_INCLUDE_DIR}
   ${PNG_INCLUDE_DIRS}
   ${GLM_INCLUDE_DIRS}
   ${OGG_INCLUDE_DIRS}
@@ -16,11 +16,9 @@ target_include_directories(ball PUBLIC
 
 target_link_libraries(ball PUBLIC
   ${SMALL3D_LIBRARY}
-  # Uncomment for OpenGL
-  # ${GLEW_LIBRARIES}
-  # ${OPENGL_LIBRARIES}
+  ${GLEW_LIBRARIES}
+  ${OPENGL_LIBRARIES}
   ${GLFW_LIBRARIES}
-  ${VULKAN_HELPER_LIBRARY} ${Vulkan_LIBRARIES} # Remove for OpenGL
   ${PNG_LIBRARIES}
   ${VORBIS_LIBRARIES}
   ${OGG_LIBRARIES}
