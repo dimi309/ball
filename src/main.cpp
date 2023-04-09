@@ -35,7 +35,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action,
 int main(int argc, char **argv) {
   Renderer *renderer = &Renderer::getInstance("Ball demo");
   GLFWwindow* window = renderer->getWindow();
-  SceneObject ball("ball", "resources/ball.glb", "");
+  SceneObject ball("ball", "resources/ball.glb");
   ball.position = glm::vec3(0.0f, -1.0f, -8.0f);
   glfwSetKeyCallback(window, keyCallback);
 
@@ -45,13 +45,13 @@ int main(int argc, char **argv) {
     if (esckey)
       break;
     if (upkey)
-      ball.position.z -= 0.001f;
+      ball.position.z -= 0.01f;
     else if (downkey)
-      ball.position.z += 0.001f;
+      ball.position.z += 0.01f;
     else if (leftkey)
-      ball.position.x -= 0.001f;
+      ball.position.x -= 0.01f;
     else if (rightkey)
-      ball.position.x += 0.001f;
+      ball.position.x += 0.01f;
     
     renderer->render(ball, glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
     renderer->swapBuffers();
