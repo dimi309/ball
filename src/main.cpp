@@ -35,7 +35,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action,
 int main(int argc, char **argv) {
   Renderer *renderer = &Renderer::getInstance("Ball demo");
   GLFWwindow* window = renderer->getWindow();
-  SceneObject ball("ball", "resources/ball.obj");
+  SceneObject ball("ball", "resources/ball.glb", "");
   ball.position = glm::vec3(0.0f, -1.0f, -8.0f);
   glfwSetKeyCallback(window, keyCallback);
 
