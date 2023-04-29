@@ -17,15 +17,6 @@ endif(MSVC)
 set(DEPS_PATH "${CMAKE_SOURCE_DIR}/deps")
 set(CMAKE_PREFIX_PATH ${DEPS_PATH})
 
-find_package(OpenGL REQUIRED)
-find_package(GLEW REQUIRED)
-find_package(GLFW REQUIRED)
-find_package(PNG REQUIRED)
-find_package(GLM)
-find_package(OGG REQUIRED)
-find_package(VORBIS REQUIRED)
-find_package(Portaudio REQUIRED)
-find_package(Freetype REQUIRED)
 find_package(SMALL3D REQUIRED)
 
 if(UNIX OR (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" AND NOT

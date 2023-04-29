@@ -2,41 +2,9 @@ add_executable(ball main.cpp)
 
 target_include_directories(ball PUBLIC "${CMAKE_SOURCE_DIR}/include")
 
-target_include_directories(ball PUBLIC
-  ${SMALL3D_INCLUDE_DIR}
-  ${GLFW_INCLUDE_DIRS}
-  ${OPENGL_INCLUDE_DIR}
-  ${PNG_INCLUDE_DIRS}
-  ${GLM_INCLUDE_DIRS}
-  ${OGG_INCLUDE_DIRS}
-  ${VORBIS_INCLUDE_DIR}
-  ${PORTAUDIO_INCLUDE_DIRS}
-  ${FREETYPE_INCLUDE_DIRS}
-  )
+target_include_directories(ball PUBLIC ${SMALL3D_INCLUDE_DIRS})
 
-target_link_libraries(ball PUBLIC
-  ${SMALL3D_LIBRARY}
-  ${GLEW_LIBRARIES}
-  ${OPENGL_LIBRARIES}
-  ${GLFW_LIBRARIES}
-  ${PNG_LIBRARIES}
-  ${VORBIS_LIBRARIES}
-  ${OGG_LIBRARIES}
-  ${PORTAUDIO_LIBRARIES}
-  ${FREETYPE_LIBRARIES}
-  )
-
-if(UNIX OR (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" AND NOT
-	CMAKE_CXX_COMPILER_VERSION VERSION_LESS 10))
-  target_include_directories(ball PUBLIC
-    ${BZIP2_INCLUDE_DIRS})
-  target_link_libraries(ball PUBLIC
-    ${BZIP2_LIBRARIES})
-endif()
-
-if(WIN32)
-  target_link_libraries(ball PUBLIC winmm)
-endif()
+target_link_libraries(ball PUBLIC ${SMALL3D_LIBRARIES})
 
 if(APPLE)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -stdlib=libc++")
@@ -53,8 +21,4 @@ if(MSVC)
   
   set_target_properties(ball PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY
     "${PROJECT_BINARY_DIR}/bin")
-endif()
-
-if(UNIX AND NOT APPLE) # Linux
-  target_link_libraries(ball PUBLIC m pthread rt asound X11 dl)
 endif()
