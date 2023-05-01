@@ -14,11 +14,6 @@ if(APPLE)
 endif()
 
 if(MSVC)
-  set_target_properties(ball PROPERTIES LINK_FLAGS_DEBUG
-    "-NODEFAULTLIB:LIBCMTD")
-  set_target_properties(ball PROPERTIES LINK_FLAGS_RELEASE
-    "-NODEFAULTLIB:LIBCMT")
-  
   set_target_properties(ball PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY
     "${PROJECT_BINARY_DIR}/bin")
 endif()
