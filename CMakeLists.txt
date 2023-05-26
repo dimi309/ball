@@ -17,6 +17,6 @@ endif(MSVC)
 set(DEPS_PATH "${CMAKE_SOURCE_DIR}/deps")
 set(CMAKE_PREFIX_PATH ${DEPS_PATH})
 
-find_package(SMALL3D REQUIRED)
+find_package(small3d REQUIRED)
 
 subdirs(src)
