@@ -1,6 +1,6 @@
-add_executable(ball main.cpp)
+find_package(small3d REQUIRED)
 
-target_include_directories(ball PUBLIC "${CMAKE_SOURCE_DIR}/include")
+add_executable(ball main.cpp)
 
 target_link_libraries(ball PRIVATE small3d::small3d)
 
