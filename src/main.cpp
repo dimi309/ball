@@ -1,5 +1,6 @@
 #include <small3d/Renderer.hpp>
 #include <small3d/SceneObject.hpp>
+#include <small3d/GlbFile.hpp>
 #include <GLFW/glfw3.h>
 
 using namespace small3d;
@@ -35,7 +36,7 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action,
 int main(int argc, char **argv) {
   Renderer *renderer = &Renderer::getInstance("Ball demo");
   GLFWwindow* window = renderer->getWindow();
-  SceneObject ball("ball", "resources/ball.glb");
+  SceneObject ball("ball", Model(GlbFile("resources/ball.glb")));
   ball.position = glm::vec3(0.0f, -1.0f, -8.0f);
   glfwSetKeyCallback(window, keyCallback);
 
