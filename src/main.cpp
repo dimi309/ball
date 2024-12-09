@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
   Renderer *renderer = &Renderer::getInstance("Ball demo");
   GLFWwindow* window = renderer->getWindow();
   SceneObject ball("ball", Model(GlbFile("resources/ball.glb")));
-  ball.position = glm::vec3(0.0f, -1.0f, -8.0f);
+  ball.position = small3d::Vec3(0.0f, -1.0f, -8.0f);
   glfwSetKeyCallback(window, keyCallback);
 
   while (!glfwWindowShouldClose(window) && !esckey) {
@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
     else if (rightkey)
       ball.position.x += 0.01f;
     
-    renderer->render(ball, glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
+    renderer->render(ball, small3d::Vec4(1.0f, 1.0f, 0.0f, 1.0f));
     renderer->swapBuffers();
   }
   return 0;
